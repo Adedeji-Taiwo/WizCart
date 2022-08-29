@@ -1,0 +1,34 @@
+{
+  "name": "wizcart",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/akaya-telivigala": "^4.5.7",
+    "@fontsource/sora": "^4.5.9",
+    "dotenv": "^16.0.1",
+    "i18next": "^21.9.1",
+    "i18next-browser-languagedetector": "^6.1.5",
+    "i18next-http-backend": "^1.4.1",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-flags-select": "^2.2.3",
+    "react-i18next": "^11.18.4",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5",
+    "swiper": "^8.0.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "vite": "^3.0.7"
+  }
+}
