@@ -126,7 +126,7 @@ export const SliderItem = styled.div`
 
 
         p {
-            color: ${props => props.theme.primaryDark};
+            color: ${props => props.theme.primary};
             font-size: ${props => props.theme.fontxs};
             font-weight: 500;
             text-transform: capitalize;
@@ -175,7 +175,7 @@ export const SliderItem = styled.div`
         }
 
         button {
-            background: ${props => props.theme.primaryDark};
+            background: ${props => props.theme.primary};
             color: ${props => props.theme.white};
             width: max-content;
             font-size: ${props => props.theme.font5xs};

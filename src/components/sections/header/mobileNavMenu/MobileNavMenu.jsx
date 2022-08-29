@@ -27,8 +27,8 @@ const MobileNavMenu = () => {
 
     const handleLang  = (flag) => {
 
-      let baseLink = "http://localhost:5173/";
-      window.location.replace(baseLink + "?lng=" + flag);
+      let baseUrl = `'${import.meta.env.VITE_BASE_URL}'`;
+      window.location.replace(baseUrl + "?lng=" + flag);
   }
 
   return (
