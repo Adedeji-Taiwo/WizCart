@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "serve -s build",
     "build": "vite build",
-    "preview": "vite preview"
+    "serve": "vite preview"
   },
   "dependencies": {
     "@fontsource/akaya-telivigala": "^4.5.7",
@@ -23,7 +22,6 @@
     "react-i18next": "^11.18.4",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
-    "serve": "^13.0.2",
     "styled-components": "^5.3.5",
     "swiper": "^8.0.6"
   },
