@@ -24,8 +24,8 @@ const Cta = () => {
         setLang(flag);
 
 
-        let baseUrl = `'${import.meta.env.VITE_BASE_URL}'`;
-        window.location.replace(baseUrl + "?lng=" + flag);
+        let baseLink = "https://wizcart.netlify.app";
+        window.location.replace(baseLink + "?lng=" + flag);
     }
 
   return (
