@@ -27,7 +27,7 @@ const MobileNavMenu = () => {
 
     const handleLang  = (flag) => {
 
-      let baseUrl = `'${import.meta.env.VITE_BASE_URL}'`;
+      let baseUrl =  "https://wizcart.netlify.app";
       window.location.replace(baseUrl + "?lng=" + flag);
   }
 

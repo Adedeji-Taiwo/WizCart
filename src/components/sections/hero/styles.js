@@ -187,6 +187,7 @@ export const SliderItem = styled.div`
 
             &:hover {
                 transform: scale(1.1);
+                background: ${props => props.theme.primaryDark};
             }
 
             @media (min-width: 480px) {
