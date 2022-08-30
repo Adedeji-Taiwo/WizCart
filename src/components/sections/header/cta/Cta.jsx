@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Gb, Fr, Es } from 'react-flags-select';
+import { Gb, Sg, Cn } from 'react-flags-select';
 import { FaAngleDown } from 'react-icons/fa';
 import { facebook, twitter, linkedin, instagram } from '../../../../assets/social-links';
 import { 
@@ -68,11 +68,11 @@ const Cta = () => {
         </HeaderAlertNews>
 
         <HeaderTopActions>
-           <p>{lang === 'es' ? <Es /> : lang === 'fr' ? <Fr /> : <Gb />}</p>
+           <p>{lang === 'ms' ? <Sg /> : lang === 'zh' ? <Cn /> : <Gb />}</p>
            <p><FaAngleDown /></p>
            <div>
-                <button onClick={() => handleLang('fr')} title={t('French')}><Fr /></button>
-                <button onClick={() => handleLang('es')} title={t('Spanish')}><Es /></button>
+                <button onClick={() => handleLang('ms')} title={t('Malay')}><Sg /></button>
+                <button onClick={() => handleLang('zh')} title={t('Chinese')}><Cn /></button>
                 <button onClick={() => handleLang('en')} title={t('English')}><Gb /></button>
            </div>
         </HeaderTopActions>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Gb, Fr, Es } from 'react-flags-select';
+import { Gb, Sg, Cn } from 'react-flags-select';
 import { useTranslation } from 'react-i18next'
 import { MenuContext } from '../../../../context/MenuContext';
 import { FaTimes } from 'react-icons/fa'
@@ -224,11 +224,11 @@ const MobileNavMenu = () => {
                 {accordionClick === 5 && (
                     <>
                       <SubMenuCategory>
-                      <button onClick={() => handleLang('fr')} title={t('French')}><Fr /></button>
+                      <button onClick={() => handleLang('ms')} title={t('Malay')}><Sg /></button>
                     </SubMenuCategory>
         
                     <SubMenuCategory>
-                      <button onClick={() => handleLang('es')} title={t('Spanish')}><Es /></button>
+                      <button onClick={() => handleLang('zh')} title={t('Chinese')}><Cn /></button>
                     </SubMenuCategory>
         
                     <SubMenuCategory>
