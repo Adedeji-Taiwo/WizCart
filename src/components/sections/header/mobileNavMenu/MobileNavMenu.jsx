@@ -27,7 +27,10 @@ const MobileNavMenu = () => {
 
     const handleLang  = (flag) => {
 
-      let baseUrl =  "https://wizcart.netlify.app";
+      const baseUrl = process.env.NODE_ENV === 'development' 
+      ? import.meta.env.VITE_LOCAL_BASE_URL
+      : import.meta.env.VITE_HOST_BASE_URL || 'https://wizcart.netlify.app/';
+      
       window.location.replace(baseUrl + "?lng=" + flag);
   }
 
@@ -35,7 +38,7 @@ const MobileNavMenu = () => {
     <MobileNavigationMenu active={isMenuOpen}>
 
     <MenuTop>
-      <h2>Menu</h2>
+      <h2>{t("Menu")}</h2>
       <button onClick={closeMenu}>
         <FaTimes />
       </button>

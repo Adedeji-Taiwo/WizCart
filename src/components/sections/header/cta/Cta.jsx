@@ -24,11 +24,11 @@ const Cta = () => {
         setLang(flag);
 
 
-        const baseLink = process.env.NODE_ENV === 'development' 
+        const baseURl = process.env.NODE_ENV === 'development' 
         ? import.meta.env.VITE_LOCAL_BASE_URL
-        : import.meta.env.VITE_HOST_BASE_URL;
+        : import.meta.env.VITE_HOST_BASE_URL || 'https://wizcart.netlify.app/';
 
-        window.location.replace(baseLink + "?lng=" + flag);
+        window.location.replace(baseUrl + "?lng=" + flag);
     }
 
   return (
