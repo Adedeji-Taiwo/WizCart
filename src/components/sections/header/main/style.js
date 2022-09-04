@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { containerCss } from "../../../../styles/GlobalStyles";
 
 
@@ -54,9 +54,13 @@ export const HeaderLogo = styled.a`
 export const HeaderSearchContainer = styled.div`
     position: relative;
 
-    @media (min-width: 570px) {
-        min-width: 300px;
-    }
+    ${props =>
+      props.focus &&
+      css`
+    z-index: 20;
+  `}
+
+  
 
     @media (min-width: 768px) {
         flex-grow: 1;
@@ -71,6 +75,11 @@ export const SearchField = styled.input`
     border: 1px solid ${props => props.theme.cultured};
     border-radius: ${props => props.theme.borderRadiusMd};
 
+    &:focus {
+        border: 1px solid ${props => props.theme.eerieBlack};
+        outline: none;
+    }
+
     &::-webkit-search-cancel-button { 
         display: none;
      }
@@ -79,7 +88,7 @@ export const SearchField = styled.input`
 export const SearchBtn = styled.button`
         position: absolute;
         top: 50%;
-        right: 2px;
+        right: 1.5px;
         background: transparent;
         transform: translateY(-50%);
         color:  ${props => props.theme.onyx};
@@ -91,6 +100,37 @@ export const SearchBtn = styled.button`
         &:hover {
             color: ${props => props.theme.primary};
         }
+
+        ${props =>
+            props.focus &&
+            css`
+            background: ${prop => prop.theme.primary};
+            color: ${prop => prop.theme.eerieBlack};
+
+            &:hover {
+                color: ${prop => prop.theme.eerieBlack};
+            }
+        `}
+`
+
+export const CancelSearchBtn = styled.button`
+        position: absolute;
+        top: 55%;
+        right: 55px;
+        background: transparent;
+        transform: translateY(-50%);
+        color:  ${props => props.theme.eerieBlack};
+        font-size: 20px;
+        padding: 8px 5px;
+        visibility: hidden;
+        transition: color ${props => props.theme.transitionTiming};
+
+        ${props =>
+            props.focus &&
+            css`
+            visibility: visible;
+            color: ${prop => prop.theme.eerieBlack};
+        `}
 `
 
 export const HeaderUserActions = styled.div`
@@ -99,19 +139,28 @@ export const HeaderUserActions = styled.div`
      @media (min-width: 1024px) {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 15px;
      }
-` 
+`
 
 export const ActionBtn = styled.button`
+    @media (min-width: 1024px) {
        position: relative;
         font-size: 30px;
         color:  ${props => props.theme.eerieBlack};
         padding: 5px;
         transition:  ${props => props.theme.transitionTiming};
 
-        &:hover {
-            transform: scale(1.1);
+        &:nth-child(2) {
+            font-size: 28px;
+            padding-top: 0px;
+        }
+       
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 `
 
@@ -126,4 +175,176 @@ export const Count = styled.span`
     line-height: 1;
     padding: 2px 4px;
     border-radius: 20px;
+`
+
+
+export const Avatar = styled.button`
+ @media (min-width: 1024px) {
+    position: relative;
+    margin-top: 5px;
+    font-size: 32px;
+    color:  ${props => props.theme.eerieBlack};
+    padding: 5px;
+    transition:  ${props => props.theme.transitionTiming};
+
+    & > div.profile-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 230px;
+        background: ${props => props.theme.primaryDark};
+        padding: 20px;
+        border-radius: ${props => props.theme.borderRadiusMd};
+        border: 1px solid ${props => props.theme.cultured};
+        box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1);
+        transform: translateY(50px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:  ${props => props.theme.transitionTiming};
+        z-index: 25;
+
+
+        div {
+                p {
+                color: ${props => props.theme.white};
+                font-size:  ${props => props.theme.fontxs};
+                font-weight: 600;
+                padding-bottom: 10px;
+                border-bottom: 1px solid ${props => props.theme.cultured};
+                }
+                ul {
+                    margin-bottom: 25px;
+                    li {
+                    list-style-type:square;
+                    color:  ${props => props.theme.white};
+                    font-size:   ${props => props.theme.font2xs};
+                    transition:   ${props => props.theme.transitionTiming};
+                    padding: 5px;
+                    text-align: left;
+
+                }
+                }
+        }
+
+            div {
+                span {
+                color:  ${props => props.theme.white};
+                text-transform: capitalize;
+                transition:   ${props => props.theme.transitionTiming};
+                display:block;
+                font-size:   ${props => props.theme.fontxs};
+                padding: 5px 20px 20px;
+                border-bottom: 1px solid ${props => props.theme.cultured};
+                margin-bottom: 10px;
+            
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+
+    &:hover > div.profile-dropdown{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    }
+}
+
+`
+
+
+
+export const MobileAvatar = styled.button`
+    display: none;
+
+
+    @media (max-width: 1023px) {
+        display: block;
+        position: relative;
+        font-size: 32px;
+        color:  ${props => props.theme.eerieBlack};
+        padding: 5px;
+        z-index: 10;
+        transition:  ${props => props.theme.transitionTiming};
+
+        & > div.profile-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            background: ${props => props.theme.primaryDark};
+            padding: 20px;
+            border-radius: ${props => props.theme.borderRadiusMd};
+            border: 1px solid ${props => props.theme.cultured};
+            box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition:  ${props => props.theme.transitionTiming};
+            
+
+
+            div {
+                    p {
+                    color: ${props => props.theme.white};
+                    font-size:  ${props => props.theme.fontxs};
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid ${props => props.theme.cultured};
+                    }
+                    ul {
+                        margin-bottom: 25px;
+                        li {
+                        list-style-type:square;
+                        color:  ${props => props.theme.white};
+                        font-size:   ${props => props.theme.font2xs};
+                        transition:   ${props => props.theme.transitionTiming};
+                        padding: 5px;
+                        text-align: left;
+
+                    }
+                    }
+            }
+
+                div {
+                    span {
+                    color:  ${props => props.theme.white};
+                    text-transform: capitalize;
+                    transition:   ${props => props.theme.transitionTiming};
+                    display:block;
+                    font-size:   ${props => props.theme.fontxs};
+                    padding: 5px 20px 20px;
+                    border-bottom: 1px solid ${props => props.theme.cultured};
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+        }
+    }
+
+    &:hover > div.profile-dropdown{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    z-index: 999;
+    }
+
+    @media (max-width: 570px) {
+        bottom: 110px;
+        left: 88%;
+    }
+
+    &:hover {
+                transform: scale(1.1);
+    }
 `

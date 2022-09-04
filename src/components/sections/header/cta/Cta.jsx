@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Gb, Sg, Cn } from 'react-flags-select';
 import { FaAngleDown } from 'react-icons/fa';
-import { facebook, twitter, linkedin, instagram } from '../../../../assets/social-links';
+import { facebook, twitter, instagram, pinterest, youtube } from '../../../../assets/social-links';
 import { 
     CtaWrapper,
     Container,
@@ -49,13 +49,19 @@ const Cta = () => {
 
           <li>
             <HeaderSocialLinks>
-            <img src={instagram} alt="instagram" title='instagram'/>
+            <img src={pinterest} alt="pinterest" title='pinterest'/>
             </HeaderSocialLinks>
           </li>
 
           <li>
             <HeaderSocialLinks>
-              <img src={linkedin} alt="linkedin" title='linkedin'/>
+            <img src={instagram} alt="instagram" title='instagram'/>
+            </HeaderSocialLinks>
+          </li>
+          
+          <li>
+            <HeaderSocialLinks>
+              <img src={youtube} alt="youtube" title='youtube'/>
             </HeaderSocialLinks>
           </li>
         </HeaderSocialWrapper>

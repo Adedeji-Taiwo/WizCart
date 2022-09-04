@@ -44,7 +44,7 @@ export const MenuTop = styled.div`
 
     button {
         color: ${props => props.theme.eerieBlack};
-        font-size: ${props => props.theme.fontxl};
+        font-size: ${props => props.theme.fontlg};
     }
 `
 
@@ -160,18 +160,55 @@ export const MenuSocialContainer = styled.ul`
         display: flex;
         justify-content: center;
         align-items: center;
-
-        a {
-        background:  ${props => props.theme.cultured};
-        color:  ${props => props.theme.eerieBlack};
-        font-size: 20px;
-        padding: 10px;
         border-radius:  ${props => props.theme.borderRadiusMd};
 
-        &:hover {
-            background:  ${props => props.theme.primaryLight};
-            color:  ${props => props.theme.white};
+
+        &:nth-child(1) {
+            background: #1877f2; 
+            
+            &:hover {
+                background: #0d6fed; 
+            }
         }
+        &:nth-child(2) {
+            background: #55acee;
+
+            &:hover {
+                background: #47a5ed;  
+            }
+        }
+
+        &:nth-child(3) {
+            background: #cb2027; 
+
+            &:hover {
+                background: #be1e24;  
+            }
+        }
+
+        &:nth-child(4) {
+            background: linear-gradient(29.61deg, #f38334 0%, #da2e7d 50.39%, #6b54c6 100%);
+
+            &:hover {
+                background: linear-gradient(29.61deg, #e6670e 0%, #b52064 50.39%, #513aad 100%);
+
+            }
+        }
+
+        &:nth-child(5) {
+            background: #b00;
+
+            &:hover {
+                background: #ac0000;
+            }
+        }
+
+        
+
+        a {
+        font-size: 20px;
+        padding: 8px;
+
 
         img {
             width: 100%;

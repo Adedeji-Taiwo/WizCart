@@ -35,6 +35,52 @@ export const HeaderSocialWrapper = styled.ul`
         align-items: center;
         gap: 5px;
        }
+
+       li {
+        border-radius: ${props => props.theme.borderRadiusSm};
+        transition: ${props => props.theme.transitionTiming};
+
+        
+        &:nth-child(1) {
+            background: #1877f2; 
+            
+            &:hover {
+                background: #0d6fed; 
+            }
+        }
+        &:nth-child(2) {
+            background: #55acee;
+
+            &:hover {
+                background: #47a5ed;  
+            }
+        }
+
+        &:nth-child(3) {
+            background: #cb2027; 
+
+            &:hover {
+                background: #be1e24;  
+            }
+        }
+
+        &:nth-child(4) {
+            background: linear-gradient(29.61deg, #f38334 0%, #da2e7d 50.39%, #6b54c6 100%);
+
+            &:hover {
+                background: linear-gradient(29.61deg, #e6670e 0%, #b52064 50.39%, #513aad 100%);
+
+            }
+        }
+
+        &:nth-child(5) {
+            background: #b00;
+
+            &:hover {
+                background: #ac0000;
+            }
+        }
+       }
 `
 
 export const HeaderSocialLinks = styled.a`
@@ -45,22 +91,18 @@ export const HeaderSocialLinks = styled.a`
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 5px;
-        background: ${props => props.theme.eerieBlack};
+        padding: 6px;
         border-radius: ${props => props.theme.borderRadiusSm};
         color: ${props => props.theme.eerieBlack};
         transition: ${props => props.theme.transitionTiming};
 
-        &:hover {
-            background: ${props => props.theme.primaryLight};
-            color: ${props => props.theme.white};
-        }
+       
     }
 
     img {
         width: 100%;
         height: auto;
-        max-width: 20px;
+        max-width: 15px;
 
         &:hover {
                 transform: scale(1.2);
@@ -110,7 +152,7 @@ export const HeaderTopActions = styled.div`
     }
 
     div {
-       display: none;
+        display: none;
         position: absolute;
         right: 3px;
         top: 27px;
@@ -119,7 +161,7 @@ export const HeaderTopActions = styled.div`
         background: ${props => props.theme.primaryLight};
         min-width: 55px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
+        z-index: 11;
         padding: 0.5rem 0.8rem;
         cursor: auto;
         

@@ -4,6 +4,8 @@ import { containerCss } from "../../../../styles/GlobalStyles";
 
 export const DesktopNavigationMenu = styled.div`
     display: none;
+    overflow: hidden;
+   
 
     @media (min-width: 1024px) {
         display: block;

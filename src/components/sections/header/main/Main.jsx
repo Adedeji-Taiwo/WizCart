@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from '../../../../assets/brandlogo/logo-black.png'
+import { MenuContext } from '../../../../context/MenuContext';
 import { useTranslation } from 'react-i18next'
 import { AiOutlineSearch, AiOutlineHeart } from 'react-icons/ai';
-import { BsCart3, BsPerson } from 'react-icons/bs';
+import { BsCart3, BsPerson, BsShop } from 'react-icons/bs';
+import { VscClose } from 'react-icons/vsc'
+import { FaRegUserCircle } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom';
+import user from '../../../../assets/userProfile/user Profile.svg';
 import {
     HeaderMain,
     Container,
@@ -12,32 +17,83 @@ import {
     SearchBtn,
     HeaderUserActions,
     ActionBtn,
-    Count
+    Count,
+    CancelSearchBtn,
+    Avatar,
+    MobileAvatar
 } from './style';
 
 
 
 const Main = () => {
+    const { toggleMenu, isMenuOpen, closeMenu } = useContext(MenuContext);
     const { t } = useTranslation(); 
+    const navigate = useNavigate();
+
+    
+    const handleFocus = () => {
+        toggleMenu();
+        document.querySelector('.mobile-nav-bar').style.display = 'none';
+    }
 
   return (
     <HeaderMain>
         <Container>
         <HeaderLogo>
-            <img src={Logo} alt="WizCart's logo" title='WizCart'/>
+            <img onClick={() => navigate('/')} src={Logo} alt="WizCart's logo" title='WizCart'/>
         </HeaderLogo>
 
-        <HeaderSearchContainer>
-            <SearchField type="search" name="search" className="search-field" placeholder={`${t("Search for a product name")}...`} />
-            <SearchBtn>
-                <AiOutlineSearch title={t("Search")}/>
+        <HeaderSearchContainer focus={isMenuOpen}>
+            <SearchField type="search" name="search" className="search-field" placeholder={`${t("Search for a product name")}...`} onFocus={handleFocus} />
+            <CancelSearchBtn focus={isMenuOpen} onClick={closeMenu}>
+                <VscClose title={t("Close")} />
+            </CancelSearchBtn>
+            <SearchBtn focus={isMenuOpen}>
+                <AiOutlineSearch title={t("Search")} />
             </SearchBtn>
         </HeaderSearchContainer>
 
+
+
+        <MobileAvatar>
+                <FaRegUserCircle title={t("Profile")} />
+                <div className='profile-dropdown'>
+                    <div>
+                        <p>Sign in or create an account:</p>
+                        <ul>
+                            <li>For faster checkout</li>
+                            <li>To access order history</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span onClick={() => navigate('/login')}>Sign in</span>
+                        <span>Register</span>
+                    </div>
+                </div>
+            </MobileAvatar>
+
+
         <HeaderUserActions>
 
-            <ActionBtn>
+            <Avatar>
                 <BsPerson title={t("Profile")} />
+                <div className='profile-dropdown'>
+                    <div>
+                        <p>Sign in or create an account:</p>
+                        <ul>
+                            <li>For faster checkout</li>
+                            <li>To access order history</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span onClick={() => navigate('/login')}>Sign in</span>
+                        <span>Register</span>
+                    </div>
+                </div>
+            </Avatar>
+
+            <ActionBtn>
+                <BsShop title={t("Shop")} />
             </ActionBtn>
 
             <ActionBtn>

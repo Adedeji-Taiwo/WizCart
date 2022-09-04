@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { containerCss } from "../../../styles/GlobalStyles";
+import { containerCss } from "../../../../styles/GlobalStyles";
 
 
 export const Banner = styled.section`

@@ -3,7 +3,7 @@ import { Gb, Sg, Cn } from 'react-flags-select';
 import { useTranslation } from 'react-i18next'
 import { MenuContext } from '../../../../context/MenuContext';
 import { FaTimes } from 'react-icons/fa'
-import { facebook, twitter, instagram, linkedin } from '../../../../assets/social-links';
+import { facebook, twitter, pinterest, instagram, youtube } from '../../../../assets/social-links';
 import { MdOutlineAdd, MdOutlineRemove } from 'react-icons/md';
 import { AiOutlineCaretLeft, AiOutlineCaretDown } from 'react-icons/ai'
 import { 
@@ -35,12 +35,12 @@ const MobileNavMenu = () => {
   }
 
   return (
-    <MobileNavigationMenu active={isMenuOpen}>
+    <MobileNavigationMenu active={isMenuOpen} className='mobile-nav-bar'>
 
     <MenuTop>
       <h2>{t("Menu")}</h2>
       <button onClick={closeMenu}>
-        <FaTimes />
+        <FaTimes title={t("Close")}/>
       </button>
     </MenuTop>
 
@@ -256,13 +256,19 @@ const MobileNavMenu = () => {
 
         <li>
           <a href="#" className="social-link">
+          <img src={pinterest} alt="pinterest" title='pinterest' />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" className="social-link">
           <img src={instagram} alt="instagram" title='instagram' />
           </a>
         </li>
 
         <li>
           <a href="#">
-            <img src={linkedin} alt="linkedin" title='linkedin' />
+            <img src={youtube} alt="youtube" title='youtube' />
           </a>
         </li>
 

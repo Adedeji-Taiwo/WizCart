@@ -14,11 +14,13 @@ const Preloader = () => {
     const [loader, setLoader] = useState(true);
     
     useEffect(() => {
-     if (loader) {
-         setTimeout(() => {
-             setLoader(false);
-         }, 2000)
-     } 
+        const timer = setTimeout(() => {
+            setLoader(false);
+        }, 2000);
+        
+         return () => {
+            clearTimeout(timer);
+         }
     }, [loader]);
 
   return (

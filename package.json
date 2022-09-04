@@ -13,6 +13,7 @@
     "@fontsource/sora": "^4.5.9",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
+    "gsap": "^3.11.0",
     "i18next": "^21.9.1",
     "i18next-browser-languagedetector": "^6.1.5",
     "i18next-http-backend": "^1.4.1",

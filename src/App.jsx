@@ -1,12 +1,16 @@
+import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles'
 import { vars } from './styles/Variables'
 import Overlay from './components/overlay/Overlay';
-import Preloader from './components/preloader/Preloader'
+import BackToTop from './components/backToTop/BackToTop';
 import Header from './components/sections/header/Header';
 import { MenuProvider } from './context/MenuContext';
 import Hero from './components/sections/hero/Hero';
 import SplashScreen from './components/splashScreen/SplashScreen';
+import Login from './pages/login/Login';
+import Footer from './components/sections/footer/Footer';
+
 
 
 
@@ -18,8 +22,13 @@ function App() {
       <ThemeProvider theme={vars}>
         <Overlay />
         <SplashScreen />
+        <BackToTop />
         <Header />
-        <Hero />
+        <Routes>
+          <Route path='/' element={<Hero />} />
+          <Route path='login' element={<Login />} />
+        </Routes>
+        <Footer />
       </ThemeProvider>
     </MenuProvider>
   )

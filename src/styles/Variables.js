@@ -15,6 +15,7 @@ export const vars = {
     primaryLight: '#c47df5',
 
 
+
     font5xs: ' 0.625rem',
     font4xs: '0.688rem',
     font3xs: '0.75rem',
