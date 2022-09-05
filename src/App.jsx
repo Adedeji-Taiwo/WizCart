@@ -28,7 +28,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Hero />} />
-          <Route path={'login'} element={<Login />} />
+          <Route path={`${encodeURI(t('login'))}`} element={<Login />} />
         </Routes>
         <Footer />
       </ThemeProvider>

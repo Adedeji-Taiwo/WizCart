@@ -65,7 +65,7 @@ const Main = () => {
                         </ul>
                     </div>
                     <div>
-                        <span onClick={() => navigate("/login")}>{t("Sign in")}</span>
+                        <span onClick={() => navigate(`/${encodeURI(t('login'))}`)}>{t("Sign in")}</span>
                         <span>{t("Register")}</span>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ const Main = () => {
                         </ul>
                     </div>
                     <div>
-                        <span onClick={() => navigate("/login")}>{t("Sign in")}</span>
+                        <span onClick={() => navigate(`/${encodeURI(t('login'))}`)}>{t("Sign in")}</span>
                         <span>{t("Register")}</span>
                     </div>
                 </div>

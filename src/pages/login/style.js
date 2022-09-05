@@ -83,6 +83,7 @@ export const Form = styled.form`
                 font-weight: 600;
                 margin-top: 10px;
                 padding: 10px;
+                text-transform: capitalize;
                
 
                 &:hover {
@@ -117,6 +118,7 @@ export const Form = styled.form`
             text-align: center;
             position: relative;
             font-size: ${props => props.theme.fontsm};
+            text-transform: uppercase;
 
             &::after {
                 position: absolute;

@@ -35,7 +35,7 @@ const Login = () => {
             </button>
           </div>
           <div>
-            OR
+          {t("or")}
           </div>
           <div>
             <span><MdOutlineAlternateEmail title={t("Email")} /></span>
@@ -55,7 +55,7 @@ const Login = () => {
           <Text right={true}><p>{t("Forgot your password?")}</p></Text>
           
           <div>
-            <input type="submit" name="Login" value={t("Login")} id="submit" />
+            <input type="submit" name="Login" value={t("login")} id="submit" />
           </div>
 
           <Text central={true}>{t("Don't have an account?")} &nbsp; <p>{t("Sign Up")}</p></Text>
