@@ -7,7 +7,6 @@ import { BsCart3, BsPerson, BsShop } from 'react-icons/bs';
 import { VscClose } from 'react-icons/vsc'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
-import user from '../../../../assets/userProfile/user Profile.svg';
 import {
     HeaderMain,
     Container,
@@ -59,15 +58,15 @@ const Main = () => {
                 <FaRegUserCircle title={t("Profile")} />
                 <div className='profile-dropdown'>
                     <div>
-                        <p>Sign in or create an account:</p>
+                        <p>{t("Sign in or create an account")}:</p>
                         <ul>
-                            <li>For faster checkout</li>
-                            <li>To access order history</li>
+                            <li>{t("For faster checkout")}</li>
+                            <li>{t("To access order history")}</li>
                         </ul>
                     </div>
                     <div>
-                        <span onClick={() => navigate('/login')}>Sign in</span>
-                        <span>Register</span>
+                        <span onClick={() => navigate("/login")}>{t("Sign in")}</span>
+                        <span>{t("Register")}</span>
                     </div>
                 </div>
             </MobileAvatar>
@@ -79,15 +78,15 @@ const Main = () => {
                 <BsPerson title={t("Profile")} />
                 <div className='profile-dropdown'>
                     <div>
-                        <p>Sign in or create an account:</p>
+                        <p>{t("Sign in or create an account")}:</p>
                         <ul>
-                            <li>For faster checkout</li>
-                            <li>To access order history</li>
+                            <li>{t("For faster checkout")}</li>
+                            <li>{t("To access order history")}</li>
                         </ul>
                     </div>
                     <div>
-                        <span onClick={() => navigate('/login')}>Sign in</span>
-                        <span>Register</span>
+                        <span onClick={() => navigate("/login")}>{t("Sign in")}</span>
+                        <span>{t("Register")}</span>
                     </div>
                 </div>
             </Avatar>

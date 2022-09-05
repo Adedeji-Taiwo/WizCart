@@ -31,19 +31,19 @@ const Login = () => {
           <div className='google'>
           < button className="g-button">
               <img className="g-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/157px-Google_%22G%22_Logo.svg.png" alt="Google Logo" />
-              <p className="g-text">Sign in with Google</p>
+              <p className="g-text">{t("Sign in with Google")}</p>
             </button>
           </div>
           <div>
             OR
           </div>
           <div>
-            <span><MdOutlineAlternateEmail title={t("email")} /></span>
+            <span><MdOutlineAlternateEmail title={t("Email")} /></span>
             <input type="email" name="email" id="email" placeholder={`${t("Email")}...`} />
           </div>
 
           <div>
-            <span><GiPadlock title={t("password")} /></span>
+            <span><GiPadlock title={t("Password")} /></span>
             <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder={`${t("Password")}...`} onFocus={() => setVisible(true)} />
             {visible && (
               <p className='password' onClick={togglePassword}>
@@ -52,13 +52,13 @@ const Login = () => {
               )}
           </div>
 
-          <Text right={true}><p>Forgot your password?</p></Text>
+          <Text right={true}><p>{t("Forgot your password?")}</p></Text>
           
           <div>
-            <input type="submit" name="Login" value="Login" id="submit" />
+            <input type="submit" name="Login" value={t("Login")} id="submit" />
           </div>
 
-          <Text central={true}>Don't have an account? &nbsp; <p>Sign Up</p></Text>
+          <Text central={true}>{t("Don't have an account?")} &nbsp; <p>{t("Sign Up")}</p></Text>
         </Form>
         <div>
           

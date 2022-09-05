@@ -4,7 +4,6 @@ import { containerCss } from "../../../../styles/GlobalStyles";
 
 export const DesktopNavigationMenu = styled.div`
     display: none;
-    overflow: hidden;
    
 
     @media (min-width: 1024px) {
@@ -95,7 +94,7 @@ export const MenuCategory = styled.li`
             position: absolute;
             top: 100%;
             left: 0;
-            width: 300px;
+            width: 235px;
             background: ${props => props.theme.primaryDark};
             padding: 20px 0;
             border-radius: ${props => props.theme.borderRadiusMd};
@@ -111,7 +110,7 @@ export const MenuCategory = styled.li`
             img {
                 width: 100%;
                 height: auto;
-                max-width: 260px;
+                max-width: 193px;
                 margin: 0 20px auto;
                 border-radius:  ${props => props.theme.borderRadiusSm};
             }
