@@ -6,6 +6,7 @@ import { vars } from './styles/Variables'
 import { useTranslation } from 'react-i18next';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import Overlay from './components/overlay/Overlay';
 import BackToTop from './components/backToTop/BackToTop';
 import Header from './components/sections/header/Header';

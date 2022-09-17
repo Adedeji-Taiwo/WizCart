@@ -78,7 +78,7 @@ const Main = () => {
 
         <MobileAvatar closeDropdown={dropDown} >
                 {userInfo ? (
-                    <div className='avatarContainer'>
+                    <div className='avatarContainer '>
                         <p className="avatar" onClick={() => setDropDown(false)}>
                             {userInfo.displayName ? userInfo.displayName.split(' ').map(item => item[0]).join().replace(',', '') : userInfo.email.substring(0, 2)}
                         </p>
@@ -138,7 +138,7 @@ const Main = () => {
                         </p>
                     </div>
                 ):(
-                    <BsPerson title={t("Profile")} />
+                    <BsPerson title={t("Profile")} className='user-icon'/>
                 )}
                 <div className='profile-dropdown'>
                     <div>

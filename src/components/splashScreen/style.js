@@ -28,10 +28,10 @@ export const SplashScreenContainer = styled.section`
     justify-content: center;
     align-items: center;
 
+
     img.shopper {
         filter: drop-shadow(2px 4px 7px #565656);
-
-    }
+   }
 
     div {
         display: flex;

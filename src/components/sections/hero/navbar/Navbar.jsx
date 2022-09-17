@@ -1,5 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import {
     DesktopNavigationMenu,
     Container,
@@ -58,8 +60,11 @@ const Navbar = () => {
 
                 <PanelListItem>
                   <a href="#">
-                    <img src={fashionGirl} alt="women's fashion" width="250"
-                      height="119" />
+                      <LazyLoadImage 
+                        src={fashionGirl}
+                        effect='blur'
+                        alt="women's fashion"
+                      />
                   </a>
                 </PanelListItem>
 
@@ -88,7 +93,11 @@ const Navbar = () => {
 
                 <PanelListItem>
                   <a href="#">
-                    <img src={fashionMan} alt="men's fashion" width="250" height="119" />
+                    <LazyLoadImage 
+                        src={fashionMan}     
+                        effect='blur'
+                        alt="men's fashion"
+                      />
                   </a>
                 </PanelListItem>
 
@@ -118,7 +127,11 @@ const Navbar = () => {
 
                 <PanelListItem>
                   <a href="#">
-                    <img src={fashionKid} alt="kid's fashion" width="250" height="119" />
+                    <LazyLoadImage 
+                        src={fashionKid}
+                        effect='blur'
+                        alt="kid's fashion"
+                      />
                   </a>
                 </PanelListItem>
 
@@ -147,7 +160,11 @@ const Navbar = () => {
 
                 <PanelListItem>
                   <a href="#">
-                    <img src={fashionGirl2} alt="beauty collection" width="250" height="119" />
+                    <LazyLoadImage 
+                        src={fashionGirl2}
+                        effect='blur'
+                        alt="beauty collection"
+                      />
                   </a>
                 </PanelListItem>
 
@@ -203,8 +220,13 @@ const Navbar = () => {
               
               <PanelListItem>
                   <a href="#">
-                    <img src={harryPotter} alt="women's fashion" width="250"
-                      height="119" />
+                     <LazyLoadImage 
+                        src={harryPotter}
+                        width={250}
+                        height={119}
+                        effect='blur'
+                        alt="women's fashion"
+                      />
                   </a>
               </PanelListItem>
 
@@ -234,8 +256,13 @@ const Navbar = () => {
 
               <PanelListItem>
                   <a href="#">
-                    <img src={umbrellaGirl} alt="women's fashion" width="250"
-                      height="119" />
+                       <LazyLoadImage 
+                        src={umbrellaGirl}
+                        width={250}
+                        height={119}
+                        effect='blur'
+                        alt="women's fashion"
+                      />
                   </a>
               </PanelListItem>
 
@@ -265,8 +292,13 @@ const Navbar = () => {
 
               <PanelListItem>
                   <a href="#">
-                    <img src={twining} alt="women's fashion" width="250"
-                      height="119" />
+                       <LazyLoadImage 
+                        src={twining}
+                        width={250}
+                        height={119}
+                        effect='blur'
+                        alt="teaware"
+                      />
                   </a>
               </PanelListItem>
 

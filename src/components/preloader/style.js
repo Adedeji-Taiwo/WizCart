@@ -41,6 +41,9 @@ export const PreloaderIcon = styled.div`
     display: inline-block;
     padding: 0px;
 
+   span {
+    width: 100%;
+    
     img {
         position: absolute;
         display: inline-block;
@@ -50,4 +53,5 @@ export const PreloaderIcon = styled.div`
         -webkit-animation: ${preloaderFx} 2s alternate infinite ease-in;
         animation:  ${preloaderFx} 2s alternate infinite ease-in;
     }
+   }
 `

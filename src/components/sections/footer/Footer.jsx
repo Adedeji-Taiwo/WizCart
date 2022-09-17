@@ -2,6 +2,12 @@ import React from 'react'
 import Logo from '../../../assets/brandlogo/icon-logo.png';
 import Banner from '../../banner/Banner';
 import payment from '../../../assets/footer/payment.png';
+import visa from '../../../assets/footer/visa.svg';
+import stripe from '../../../assets/footer/stripe.svg';
+import paypal from '../../../assets/footer/paypal.svg';
+import mastercard from '../../../assets/footer/mastercard.svg';
+import maestro from '../../../assets/footer/maestro.svg';
+import googlePay from '../../../assets/footer/google-pay.svg';
 import { facebook, twitter, instagram, pinterest, youtube } from '../../../assets/social-links';
 import { useTranslation } from 'react-i18next';
 import {
@@ -16,7 +22,25 @@ import {
     FooterSocialLinks
 } from './style'
 
+const paymentOptions = [
+  {
+    id: 1,
+    img: visa
+  },
+  {
+    id: 2,
+    img: mastercard
+  },
+  {
+    id: 3,
+    img: googlePay
+  },
+  {
+    id: 5,
+    img: maestro
+  }
 
+]
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -153,7 +177,14 @@ const Footer = () => {
 
     <FooterBottomContainer>
 
-      <img src={payment} alt="payment method" className="payment-img" />
+      <p className='payments'>
+        {paymentOptions.map(({id, img}) => 
+          <span  key={id}>
+            <img src={img} alt="payment method"/>
+          </span>
+
+          )}
+      </p>
 
       <p>
         &copy; {new Date().getFullYear()} <a href="#">WizCart</a>. {t("All Rights Reserved")}.

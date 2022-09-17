@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
     SplashScreenContainer,
  } from './style'
@@ -25,9 +26,17 @@ const SplashScreen = () => {
     {showSplashScreen && (
        <SplashScreenContainer>
           {window.innerWidth > 570 ? (
-            <img src={shopperLg} alt="shopper-welcome-screen" className='shopper'/>
+           <LazyLoadImage 
+              src={shopperLg}
+              effect='blur'
+              alt="shopper-welcome-screen"
+            />
           ) : (
-            <img src={shopperMd} alt="shopper-welcome-screen" className='shopper'/>
+            <LazyLoadImage 
+                src={shopperMd}
+                effect='blur'
+                alt="shopper-welcome-screen"
+              />
           )}
           <div>
             <img src={wizCart} alt="brand-logo" />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
     PreloaderWrapper,
     PreloaderInner,
@@ -29,7 +30,11 @@ const Preloader = () => {
          <PreloaderWrapper>
          <PreloaderInner>
              <PreloaderIcon>
-                <img src={brandLogo} alt="logo" />
+                <LazyLoadImage 
+                        src={brandLogo}
+                        effect='blur'
+                        alt="logo"
+                      />
              </PreloaderIcon>
          </PreloaderInner>
      </PreloaderWrapper>

@@ -60,11 +60,14 @@ opacity: 0.2;
 
 
 
+   span  {
+    width: 100%;
     img {
         width: 100%;
         object-fit: cover;
         object-position: right;
     }
+   }
 `
 
 export const Title = styled.h1`

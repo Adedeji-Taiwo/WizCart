@@ -188,6 +188,10 @@ export const Avatar = styled.button`
     padding: 5px;
     transition:  ${props => props.theme.transitionTiming};
 
+    .user-icon {
+        margin-top: 6px;
+    }
+
     & > div.avatarContainer {
             display: flex;
             justify-content: center;
@@ -440,7 +444,7 @@ export const MobileAvatar = styled.button`
 
     @media (max-width: 570px) {
         bottom: 110px;
-        left: 85%;
+        left: 81%;
     }
 
     &:hover {

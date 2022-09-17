@@ -6,16 +6,16 @@ export const FooterWrapper = styled.footer`
     background:  ${props => props.theme.eerieBlack};
     padding: 0 0 30px;
     position:relative;
-
-    @media (max-width: 570px) {
-        padding-top: 30px;
-    }
 `
 
 export const FooterNav = styled.div`
     border-bottom: 1px solid  ${props => props.theme.onyx};
     padding-bottom: 30px;
     margin-bottom: 30px;
+
+    @media (max-width: 570px) {
+        padding-top: 30px;
+    }
 
     @media (min-width: 768px) {
         padding-top: 50px;
@@ -247,6 +247,25 @@ export const FooterBottomContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    p.payments {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        span {
+        background: ${props => props.theme.white};
+        border-radius: ${props => props.theme.borderRadiusSm};
+        padding: 4px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 30px;
+        }
+    }
 
     p {
         color:${props => props.theme.sonicSilver};
