@@ -1,12 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Logo from '../../../../assets/brandlogo/logo-black.png'
 import { MenuContext } from '../../../../context/MenuContext';
 import { useTranslation } from 'react-i18next'
-import { AiOutlineSearch, AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineSearch, AiOutlineHeart, AiOutlineUserAdd } from 'react-icons/ai';
 import { BsCart3, BsPerson, BsShop } from 'react-icons/bs';
+import { MdLogin, MdOutlineLogout } from 'react-icons/md';
+import { FaAngleDown } from 'react-icons/fa';
 import { VscClose } from 'react-icons/vsc'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import firebase from "firebase/compat/app";
 import {
     HeaderMain,
     Container,
@@ -26,13 +30,31 @@ import {
 
 const Main = () => {
     const { toggleMenu, isMenuOpen, closeMenu } = useContext(MenuContext);
+    const [dropDown, setDropDown] = useState(false);
     const { t } = useTranslation(); 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { userInfo } = useSelector(state => ({...state.userLogin}));
 
     
     const handleFocus = () => {
         toggleMenu();
         document.querySelector('.mobile-nav-bar').style.display = 'none';
+    }
+
+    const toggleDropdown = () => {
+        setDropDown(true)
+    }
+
+    const logout = () => {
+        firebase.auth().signOut();
+
+        dispatch({
+            type: "USER_LOGOUT",
+            payload: null,
+        });
+
+        navigate('./login')
     }
 
   return (
@@ -54,19 +76,52 @@ const Main = () => {
 
 
 
-        <MobileAvatar>
-                <FaRegUserCircle title={t("Profile")} />
+        <MobileAvatar closeDropdown={dropDown} >
+                {userInfo ? (
+                    <div className='avatarContainer'>
+                        <p className="avatar" onClick={() => setDropDown(false)}>
+                            {userInfo.displayName ? userInfo.displayName.split(' ').map(item => item[0]).join().replace(',', '') : userInfo.email.substring(0, 2)}
+                        </p>
+                        <p className='avatar-icon'><FaAngleDown /></p>
+                    </div>
+                ):(
+                    <div className='avatarContainer'>
+                        <FaRegUserCircle title={t("Profile")} onClick={() => setDropDown(false)}/>
+                        <p className='avatar-icon'><FaAngleDown /></p>
+                    </div>
+                )}
                 <div className='profile-dropdown'>
                     <div>
-                        <p>{t("Sign in or create an account")}:</p>
-                        <ul>
-                            <li>{t("For faster checkout")}</li>
-                            <li>{t("To access order history")}</li>
-                        </ul>
+                        {userInfo ? (
+                             <p>{userInfo.displayName ? userInfo.displayName : userInfo.email.split('@')[0]}</p>
+                        ):(
+                            <>
+                                <p>{t("Sign in or create an account")}:</p>
+                                <ul>
+                                    <li>{t("For faster checkout")}</li>
+                                    <li>{t("To access order history")}</li>
+                                </ul>
+                            </>
+                        )}
                     </div>
                     <div>
-                        <span onClick={() => navigate(`/${encodeURI(t('login'))}`)}>{t("Sign in")}</span>
-                        <span>{t("Register")}</span>
+                        {userInfo ? (
+                            <p className='icon-activity'>
+                            <span className='icon'><MdOutlineLogout /></span>
+                            <span onClick={() => {logout(); toggleDropdown();}}>{t("Logout")}</span>
+                           </p>
+                        ) : (
+                            <>
+                                <p className='icon-activity'>
+                                    <span className='icon'><MdLogin /></span>
+                                    <span onClick={() => {navigate(`/${encodeURI(t('login'))}`); toggleDropdown();}}>{t("Sign in")}</span>
+                                </p>
+                                <p className='icon-activity'>
+                                    <span className='icon'>< AiOutlineUserAdd /></span>
+                                    <span onClick={() => {navigate(`/${encodeURI(t('register'))}`); toggleDropdown();}}>{t("Register")}</span>
+                                </p>
+                            </>
+                        )}
                     </div>
                 </div>
             </MobileAvatar>
@@ -74,19 +129,49 @@ const Main = () => {
 
         <HeaderUserActions>
 
-            <Avatar>
-                <BsPerson title={t("Profile")} />
+            <Avatar closeDropdown={dropDown} onMouseEnter={() => setDropDown(false)}>
+            {userInfo ? (
+                    <div className='avatarContainer'>
+                        <p className='avatar-icon'><FaAngleDown /></p>
+                        <p className="avatar" onClick={() => setDropDown(false)}>
+                            {userInfo.displayName ? userInfo.displayName.split(' ').map(item => item[0]).join().replace(',', '') : userInfo.email.substring(0, 2)}
+                        </p>
+                    </div>
+                ):(
+                    <BsPerson title={t("Profile")} />
+                )}
                 <div className='profile-dropdown'>
                     <div>
-                        <p>{t("Sign in or create an account")}:</p>
-                        <ul>
-                            <li>{t("For faster checkout")}</li>
-                            <li>{t("To access order history")}</li>
-                        </ul>
+                    {userInfo ? (
+                             <p>{userInfo.displayName ? userInfo.displayName : userInfo.email.split('@')[0]}</p>
+                        ):(
+                            <>
+                                <p>{t("Sign in or create an account")}:</p>
+                                <ul>
+                                    <li>{t("For faster checkout")}</li>
+                                    <li>{t("To access order history")}</li>
+                                </ul>
+                            </>
+                        )}
                     </div>
                     <div>
-                        <span onClick={() => navigate(`/${encodeURI(t('login'))}`)}>{t("Sign in")}</span>
-                        <span>{t("Register")}</span>
+                        {userInfo ? (
+                             <p className='icon-activity'>
+                             <span className='icon'><MdOutlineLogout /></span>
+                             <span onClick={() => {logout(); toggleDropdown();}}>{t("Logout")}</span>
+                            </p>
+                        ) : (
+                            <>
+                                 <p className='icon-activity'>
+                                    <span className='icon'><MdLogin /></span>
+                                    <span onClick={() => {navigate(`/${encodeURI(t('login'))}`); toggleDropdown();}}>{t("Sign in")}</span>
+                                </p>
+                                <p className='icon-activity'>
+                                    <span className='icon'>< AiOutlineUserAdd /></span>
+                                    <span onClick={() => {navigate(`/${encodeURI(t('register'))}`); toggleDropdown();}}>{t("Register")}</span>
+                                </p>
+                            </>
+                        )}
                     </div>
                 </div>
             </Avatar>

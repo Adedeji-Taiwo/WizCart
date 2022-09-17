@@ -6,6 +6,10 @@ export const FooterWrapper = styled.footer`
     background:  ${props => props.theme.eerieBlack};
     padding: 0 0 30px;
     position:relative;
+
+    @media (max-width: 570px) {
+        padding-top: 30px;
+    }
 `
 
 export const FooterNav = styled.div`

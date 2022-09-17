@@ -84,6 +84,12 @@ export const Form = styled.form`
                 margin-top: 10px;
                 padding: 10px;
                 text-transform: capitalize;
+
+                ${props =>
+                    props.fadeText &&
+                    css`
+                       color: rgba(255, 255, 255, 0.8);
+                `}
                
 
                 &:hover {
@@ -102,6 +108,15 @@ export const Form = styled.form`
             color:  ${props => props.theme.primaryDark};
             font-size: 18px;
             padding: 8px 15px;
+
+            &.spinner {
+                top: 60%;
+
+                @media (max-width: 350px) {
+                        display: none;
+                        }
+        }
+
         }
 
         p.password {
@@ -112,6 +127,7 @@ export const Form = styled.form`
             color:  ${props => props.theme.onyx};
             font-size: ${props => props.theme.font3xs};
             padding: 8px 15px;
+            cursor: pointer;
         }
 
         &:nth-child(2) {
@@ -174,7 +190,13 @@ export const Form = styled.form`
             align-items: center;
             justify-content: flex-start;
             width: 100%;
+            box-shadow: 0 2px 6px #2a2a2a3d;
             border-radius: ${props => props.theme.borderRadiusMd};
+            cursor: pointer;
+
+                &:hover {
+                    background: rgb(66, 133, 225);
+                }
             }
 
             .g-logo{
@@ -191,7 +213,7 @@ export const Form = styled.form`
             .g-text{
             font-size: ${props => props.theme.font3xs};
             padding: 5px;
-            color: white;
+            color: ${props =>  props.theme.white};
             text-align: center;
             }
         }

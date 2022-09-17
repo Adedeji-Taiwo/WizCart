@@ -30,7 +30,7 @@ export const Container = styled.div`
 
 export const HeaderLogo = styled.a`
      margin-bottom: 20px;
-     cursor: pointer;
+    
 
      img {
         display: inline;
@@ -39,6 +39,7 @@ export const HeaderLogo = styled.a`
         height: auto;
         max-width: 70px;
         transition:  ${props => props.theme.transitionTiming};
+        cursor: pointer;
 
         &:hover {
             transform: scale(1.2);
@@ -181,11 +182,39 @@ export const Count = styled.span`
 export const Avatar = styled.button`
  @media (min-width: 1024px) {
     position: relative;
-    margin-top: 5px;
+    margin-top: -6px;
     font-size: 32px;
     color:  ${props => props.theme.eerieBlack};
     padding: 5px;
     transition:  ${props => props.theme.transitionTiming};
+
+    & > div.avatarContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+
+            p.avatar {
+            background: ${props => props.theme.white};
+            border: 2px solid ${props => props.theme.eerieBlack};
+            color: ${props => props.theme.primaryDark};
+            font-size: ${props => props.theme.fontsm};
+            font-weight: 600;
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            }
+            p.avatar-icon {
+                font-size: ${props => props.theme.fontxs};
+                color: ${props => props.theme.eerieBlack};
+                transition: ${props => props.theme.transitionTiming};
+            }
+    }
 
     & > div.profile-dropdown {
         position: absolute;
@@ -203,6 +232,15 @@ export const Avatar = styled.button`
         pointer-events: none;
         transition:  ${props => props.theme.transitionTiming};
         z-index: 25;
+        display: block;
+
+        ${props =>
+            props.closeDropdown &&
+            css`
+          display: none;
+        `}
+
+
 
 
         div {
@@ -228,20 +266,31 @@ export const Avatar = styled.button`
         }
 
             div {
-                span {
-                color:  ${props => props.theme.white};
-                text-transform: capitalize;
-                transition:   ${props => props.theme.transitionTiming};
-                display:block;
-                font-size:   ${props => props.theme.fontxs};
-                padding: 5px 20px 20px;
-                border-bottom: 1px solid ${props => props.theme.cultured};
-                margin-bottom: 10px;
-            
-                    &:hover {
-                        text-decoration: underline;
+                p.icon-activity {
+                        display: flex;
+                        gap: 5px;
+                        padding: 5px 20px 20px;
+                        border-bottom: 1px solid ${props => props.theme.cultured};
+                        margin-bottom: 10px;
+
+                        span {
+                            color:  ${props => props.theme.white};
+                            text-transform: capitalize;
+                            transition:   ${props => props.theme.transitionTiming};
+                            display:block;
+                            font-weight: 500;
+                            font-size:   ${props => props.theme.fontxs};
+
+                            &.icon {
+                                font-size:   ${props => props.theme.fontsm};
+                            }
+                        
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
                     }
-                }
+               
             }
         }
 
@@ -251,7 +300,12 @@ export const Avatar = styled.button`
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+
     }
+
+    &:hover p.avatar-icon {
+            transform: rotate(180deg);
+        }
 }
 
 `
@@ -271,6 +325,33 @@ export const MobileAvatar = styled.button`
         z-index: 10;
         transition:  ${props => props.theme.transitionTiming};
 
+        & > div.avatarContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+
+            p.avatar {
+            background: ${props => props.theme.white};
+            border: 3px solid ${props => props.theme.primary};
+            color: ${props => props.theme.eerieBlack};
+            font-size: ${props => props.theme.fontlg};
+            font-weight: 600;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            }
+            p.avatar-icon {
+                font-size: ${props => props.theme.fontsm};
+            }
+
+        }
+
         & > div.profile-dropdown {
             position: absolute;
             top: 100%;
@@ -286,6 +367,13 @@ export const MobileAvatar = styled.button`
             visibility: hidden;
             pointer-events: none;
             transition:  ${props => props.theme.transitionTiming};
+            display: block;
+
+            ${props =>
+                props.closeDropdown &&
+                css`
+              display: none;
+            `}
             
 
 
@@ -312,24 +400,35 @@ export const MobileAvatar = styled.button`
             }
 
                 div {
-                    span {
-                    color:  ${props => props.theme.white};
-                    text-transform: capitalize;
-                    transition:   ${props => props.theme.transitionTiming};
-                    display:block;
-                    font-size:   ${props => props.theme.fontxs};
-                    padding: 5px 20px 20px;
-                    border-bottom: 1px solid ${props => props.theme.cultured};
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                
-                        &:hover {
-                            text-decoration: underline;
+                    p.icon-activity {
+                        display: flex;
+                        gap: 5px;
+                        padding: 5px 20px 20px;
+                        border-bottom: 1px solid ${props => props.theme.cultured};
+                        margin-bottom: 10px;
+
+                        span {
+                        color:  ${props => props.theme.white};
+                        text-transform: capitalize;
+                        transition:   ${props => props.theme.transitionTiming};
+                        display:block;
+                        font-weight: 500;
+                        font-size:   ${props => props.theme.font2xs};
+                        cursor: pointer;
+
+                            &.icon {
+                                font-size:   ${props => props.theme.fontsm};
+                            }
+                    
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
         }
     }
+    
 
     &:hover > div.profile-dropdown{
     transform: translateY(0);
@@ -341,7 +440,7 @@ export const MobileAvatar = styled.button`
 
     @media (max-width: 570px) {
         bottom: 110px;
-        left: 88%;
+        left: 85%;
     }
 
     &:hover {
