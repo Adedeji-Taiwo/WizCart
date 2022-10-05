@@ -29,7 +29,7 @@ import CategoryCreate from './pages/admin/category/categoryCreate/CategoryCreate
 import CategoryUpdate from './pages/admin/category/categoryUpdate/CategoryUpdate';
 import authService from './services/auth';
 import { useDispatch } from 'react-redux';
-import { auth } from './firebase'
+import { auth } from './firebase';
 
 
 function App() {
