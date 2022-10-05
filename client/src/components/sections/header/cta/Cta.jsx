@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Gb, Sg, Cn } from 'react-flags-select';
 import { FaAngleDown } from 'react-icons/fa';
-import { facebookM, twitterM, instagramM, pinterestM, youtubeM } from '../../../../assets/social-links';
+import { facebookm, twitterm, instagramm, pinterestm, youtubem } from '../../../../assets/social-links';
 import { 
     CtaWrapper,
     Container,
@@ -37,31 +37,31 @@ const Cta = () => {
         <HeaderSocialWrapper>
           <li>
             <HeaderSocialLinks>
-              <img src={facebookM} alt="facebook" title='facebook'/>
+              <img src={facebookm} alt="facebook" title='facebook'/>
             </HeaderSocialLinks>
           </li>
 
           <li>
             <HeaderSocialLinks>
-            <img src={twitterM} alt="twitter" title='twitter'/>
+            <img src={twitterm} alt="twitter" title='twitter'/>
             </HeaderSocialLinks>
           </li>
 
           <li>
             <HeaderSocialLinks>
-            <img src={pinterestM} alt="pinterest" title='pinterest'/>
+            <img src={pinterestm} alt="pinterest" title='pinterest'/>
             </HeaderSocialLinks>
           </li>
 
           <li>
             <HeaderSocialLinks>
-            <img src={instagramM} alt="instagram" title='instagram'/>
+            <img src={instagramm} alt="instagram" title='instagram'/>
             </HeaderSocialLinks>
           </li>
           
           <li>
             <HeaderSocialLinks>
-              <img src={youtubeM} alt="youtube" title='youtube'/>
+              <img src={youtubem} alt="youtube" title='youtube'/>
             </HeaderSocialLinks>
           </li>
         </HeaderSocialWrapper>

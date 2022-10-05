@@ -6,7 +6,7 @@ import paypal from '../../../assets/footer/paypal.svg';
 import payNow from '../../../assets/footer/paynow.png';
 import mastercard from '../../../assets/footer/mastercard.svg';
 import maestro from '../../../assets/footer/maestro.svg';
-import { facebookM, twitterM, instagramM, pinterestM, youtubeM } from '../../../assets/social-links';
+import { facebookm, twitterm, instagramm, pinterestm, youtubem } from '../../../assets/social-links';
 import { useTranslation } from 'react-i18next';
 import {
     FooterWrapper,
@@ -129,31 +129,31 @@ const Footer = () => {
         <FooterSocialWrapper>
           <li>
             <FooterSocialLinks>
-              <img src={facebookM} alt="facebook" title='facebook'/>
+              <img src={facebookm} alt="facebook" title='facebook'/>
             </FooterSocialLinks>
           </li>
 
           <li>
             <FooterSocialLinks>
-            <img src={twitterM} alt="twitter" title='twitter'/>
+            <img src={twitterm} alt="twitter" title='twitter'/>
             </FooterSocialLinks>
           </li>
 
           <li>
             <FooterSocialLinks>
-            <img src={pinterestM} alt="pinterest" title='pinterest'/>
+            <img src={pinterestm} alt="pinterest" title='pinterest'/>
             </FooterSocialLinks>
           </li>
 
           <li>
             <FooterSocialLinks>
-            <img src={instagramM} alt="instagram" title='instagram'/>
+            <img src={instagramm} alt="instagram" title='instagram'/>
             </FooterSocialLinks>
           </li>
           
           <li>
             <FooterSocialLinks>
-              <img src={youtubeM} alt="youtube" title='youtube'/>
+              <img src={youtubem} alt="youtube" title='youtube'/>
             </FooterSocialLinks>
           </li>
         </FooterSocialWrapper>

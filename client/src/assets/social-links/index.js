@@ -5,8 +5,8 @@ export { default as pinterest } from './pinterest.png';
 export { default as youtube } from './youtube.png';
 
 
-export { default as facebookM } from './facebookM.svg';
-export { default as twitterM } from './twitterM.svg';
-export { default as instagramM } from './instagramM.svg';
-export { default as pinterestM } from './pinterestM.svg';
-export { default as youtubeM } from './youtubeM.svg';
+export { default as facebookm } from './facebook.svg';
+export { default as twitterm } from './twitter.svg';
+export { default as instagramm } from './instagram.svg';
+export { default as pinterestm } from './pinterest.svg';
+export { default as youtubem } from './youtube.svg';
