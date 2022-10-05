@@ -3,11 +3,11 @@ export const addCategoryReducer = (state={ loading: false, categories: [], filte
         case "LOAD_CATEGORY":
             return {categories: action.payload, filter: ''};
         case "ADD_CATEGORY_REQUEST":
-            return {loading: true, categories: action.payload};
+            return {loading: true, categories: action.payload, filter: ''};
         case "ADD_CATEGORY_SUCCESS":
-            return { loading: false, categories: action.payload };
+            return { loading: false, categories: action.payload, filter: '' };
         case "ADD_CATEGORY_FAIL":
-            return { loading: false, categories: action.payload };
+            return { loading: false, categories: action.payload, filter: '' };
         case "FILTER_CATEGORY":
             return { categories: action.data, filter: action.payload };
         default:

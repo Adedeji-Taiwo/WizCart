@@ -96,9 +96,6 @@ const CategoryCreate = () => {
           }
     }
 
-      //filtering function
-      const filteredCategories = categories
-      .filter(category => (category.name.toLowerCase()).includes(filter.toLowerCase()));
 
 
     const handleSearchChange = (e) => {
@@ -113,6 +110,7 @@ const CategoryCreate = () => {
 
     };
   
+
 
   
  
@@ -168,7 +166,9 @@ const CategoryCreate = () => {
 
     <CategoryList>
       
-    {filteredCategories.map(({_id, name, slug}) => (
+    {categories
+      .filter(category => (category.name.toLowerCase()).includes(filter.toLowerCase()))
+      .map(({_id, name, slug}) => (
             <p key={_id}>
                 <span>{name}</span>
                 <span className='icons'>
