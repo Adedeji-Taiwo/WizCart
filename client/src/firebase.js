@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need.
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
