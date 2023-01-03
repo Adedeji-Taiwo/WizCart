@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 
 
 
-const UserRoute = ({children}) => {
-  const { userInfo } = useSelector((state) => ({...state.userLogin}));
+const UserRoute = ({ children }) => {
+  const { userInfo } = useSelector((state) => ({ ...state.userLogin }));
 
   return userInfo && userInfo.token ? children : <LoadingToRedirect />;
 }
 
-export default UserRoute
+export default UserRoute;
