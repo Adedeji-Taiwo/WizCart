@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation,  Autoplay  } from "swiper";
+import SwiperCore, { Pagination, Navigation,  Autoplay  } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -47,7 +47,7 @@ const data = [
 
 
 const Slider = () => {
-  
+    SwiperCore.use([Autoplay]);
 
   return (
     <Banner>
