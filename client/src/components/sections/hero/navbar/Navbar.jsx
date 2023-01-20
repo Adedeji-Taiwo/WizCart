@@ -43,19 +43,15 @@ const Navbar = () => {
                 <MenuTitle>
                   <a href="#">{t("Babies")}</a>
                 </MenuTitle>
-
                 <PanelListItem>
                   <a href="#">{t("Clothing")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Footwear")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Accessories")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">
                       <LazyLoadImage 
@@ -65,26 +61,20 @@ const Navbar = () => {
                       />
                   </a>
                 </PanelListItem>
-
               </DropdownPanelList>
-
               <DropdownPanelList>
                 <MenuTitle>
                   <a href="#">{t("Kids")}</a>
                 </MenuTitle>
-
                 <PanelListItem>
                   <a href="#">{t("Clothing")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Footwear")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Accessories")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">
                     <LazyLoadImage 
@@ -94,27 +84,20 @@ const Navbar = () => {
                       />
                   </a>
                 </PanelListItem>
-
               </DropdownPanelList>
-
               <DropdownPanelList>
                 <MenuTitle>
                   <a href="#">{t("Teens")}</a>
                 </MenuTitle>
-
                  <PanelListItem>
                   <a href="#">{t("Clothing")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Footwear")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Accessories")}</a>
                 </PanelListItem>
-
-
                 <PanelListItem>
                   <a href="#">
                     <LazyLoadImage 
@@ -124,26 +107,20 @@ const Navbar = () => {
                       />
                   </a>
                 </PanelListItem>
-
               </DropdownPanelList>
-
               <DropdownPanelList>
                 <MenuTitle>
                   <a href="#">{t("Others")}</a>
                 </MenuTitle>
-
                 <PanelListItem>
                   <a href="#">{t("Skincare")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Haircare")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">{t("Fragrance")}</a>
                 </PanelListItem>
-
                 <PanelListItem>
                   <a href="#">
                     <LazyLoadImage 
@@ -153,9 +130,7 @@ const Navbar = () => {
                       />
                   </a>
                 </PanelListItem>
-
               </DropdownPanelList>
-
             </div>
           </MenuCategory>
           */}
@@ -301,25 +276,19 @@ const Navbar = () => {
 
           {/*<MenuCategory>
             <a href="#" className="menu-title">Marks&Spencer</a>
-
             <ul className="dropdown-list">
-
               <DropDownItem>
                 <a href="#">Women</a>
               </DropDownItem>
-
               <DropDownItem>
                 <a href="#">Men</a>
               </DropDownItem>
-
               <DropDownItem>
                 <a href="#">Kids</a>
               </DropDownItem>
-
               <DropDownItem>
                 <a href="#">Home</a>
               </DropDownItem>
-
             </ul>
             </MenuCategory>*/}
 
